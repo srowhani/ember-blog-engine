@@ -2,9 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Service.extend({
   posts: null,
-
+  session: Ember.inject.service('active-session'),
   init() {
-    this._super();
+    this._super(...arguments);
 
     this.posts = [
       {
@@ -40,5 +40,14 @@ export default Ember.Service.extend({
         ]
       }
     ];
+  },
+  add (title, body) {
+    this.get('posts').push({
+      id: this.posts.length,
+      author: this.get('session.user'),
+      title,
+      body,
+      comments: []
+    });
   }
 });

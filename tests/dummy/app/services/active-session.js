@@ -4,7 +4,7 @@ export default Ember.Service.extend({
   user: null,
 
   init() {
-    this._super();
-    this.user = 'dgeb';
+    this._super(...arguments);
+    this.user = 'Test User';
   }
 });

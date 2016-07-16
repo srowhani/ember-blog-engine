@@ -1,3 +1,14 @@
 <h3>New Post</h3>
 
+Add a post:
+
+<form {{action 'post' title body on='submit'}}>
+  <div>
+    {{input type='text' value=title placeholder='title'}}
+  </div>
+  <div>
+    {{textarea value=body placeholder='body'}}
+  </div>
+  {{input type='submit'}}
+</form>
 {{outlet}}
