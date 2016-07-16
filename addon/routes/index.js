@@ -6,7 +6,6 @@ export default Ember.Route.extend({
 
   model() {
     console.log('store service is an instanceof DS.Store', this.get('store') instanceof DS.Store);
-
     return this.get('blogData').posts;
   }
 });

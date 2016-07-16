@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
     post (title, body) {
       let blog = this.get('blog')
       blog.add(title, body)
-      this.transitionToRoute('blog')
+      this.transitionToRoute('/blog')
     }
   }
 });
